@@ -1,0 +1,13 @@
+%%把生成的每一片写入到txt文本中，以便 R 读取
+function [] = file2txt(da,sl)
+dat1 = da(:,1);
+dat2 = da(:,2);
+dat = [dat1;dat2];
+file =strcat('slice',sl,'.txt'); 
+fid = fopen(file,'w');
+
+ fprintf(fid,'%d %d\n',da);
+    
+    fprintf(fid,'\t');
+
+fclose(fid);

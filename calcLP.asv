@@ -1,0 +1,2 @@
+function calcLP(sampleMat,sum_adj_mat)
+    sampleMat(length(sampleMat))

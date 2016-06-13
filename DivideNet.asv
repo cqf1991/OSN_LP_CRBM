@@ -1,0 +1,10 @@
+function[train,test]=DivideNet(net,ratioTrain)
+    num_testlinks=ceil((1-ratioTrain)*nnz(net)/2);
+    
+    [xindex,yindex]=find(tril(net));linklist=[xindex yindex];
+    
+    clear xindex yindex;
+    test=sparse(size(net,1),size(net,2));
+    while(nnz(test)<num_testlinks)
+            index_link=ceil(rand(1)*length(linklist));
+            uid1=linklist
